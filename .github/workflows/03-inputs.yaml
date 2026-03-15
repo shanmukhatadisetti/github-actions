@@ -23,7 +23,7 @@ jobs:
   sample_input:
     runs-on: ubuntu-latest
     steps:
-      - name: printing tag version
-        run: version:${{inputs.tags}}
-      - name: printing environment
-        run: env-${{inputs.environment}}
+    - name: printing tag version
+      run: version:${{ inputs.tags }}
+    - name: printing environment
+      run: env-${{ inputs.environment }}

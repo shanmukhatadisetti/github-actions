@@ -1,0 +1,29 @@
+name: inputs
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tags:
+        description: 'Enter Vesrion'
+        required: true
+        type: string
+      environment:
+        description: Choose Env 
+        required: true
+        type: environment
+jobs:
+  sample_input:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing tag version
+        run: version:${{inputs.tags}}
+      - name: printing environment
+        run: env-${{inputs.environment}}
